@@ -2,7 +2,6 @@ package service
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"operate-mongodb/common"
 )
@@ -17,11 +16,10 @@ func MongoInsert() {
 	for i := range common.CONFIG.ClothTemplate {
 		a[i] = common.CONFIG.ClothTemplate[i]
 	}
-	insertManyResult, err := collection.InsertMany(context.TODO(), a)
+	_, err := collection.InsertMany(context.TODO(), a)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Inserted multiple documents: ", insertManyResult.InsertedIDs)
 }
 
 /*

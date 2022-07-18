@@ -8,7 +8,7 @@ import (
 )
 
 func InitConf() {
-	config := common.ConfigFile
+	config := common.TomlConfigFile
 	fmt.Printf("您正在使用config的默认值,config的路径为%v\n", config)
 	v := viper.New()
 	//设置配置文件路径

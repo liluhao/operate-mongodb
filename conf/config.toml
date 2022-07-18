@@ -1,0 +1,26 @@
+[mongodb]
+path = "localhost:27017"
+dbname = "games"
+collection = "clothTemplate"
+
+[[clothtemplate]]
+cid = "1001"
+name = "yaya经典款发型"
+type = 1
+suitId = 1
+position = "[ -4.504,124.629 ]"
+scale = "0.5"
+price = 0
+getType = 1
+_class = "com.sweetpotato.model.template.ClothTemplate"
+
+[[clothtemplate]]
+cid = "1002"
+name = "yaya经典款上装"
+type = 2
+suitId = 1
+position = "[ -4.504,124.630 ]"
+scale = "0.5"
+price = 0
+getType = 1
+_class = "com.sweetpotato.model.template.ClothTemplate"
