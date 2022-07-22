@@ -9,29 +9,27 @@ mongodb:
     - 'transtable'
 
 chart:
-    - name: 'filter_box'
-      type: 'filter_box'
-      dataset_id: '62cff27c6d81ae2bb7b864b3'
+    - name: filter_box
+      type: filter_box
+      dataset_id: 62cff27c6d81ae2bb7b864b3
       inputs:
-        - name: '平台'
-          label: '平台'
-          type: 'MultiSelect'
+        - name: 平台
+          label: 平台
+          type: MultiSelect
           source:
             type: URL
-            value:
-               - value: 'http://dev-game-gm-api.kingnet.com/game/enum/my/platform'
+            value: 'http://dev-game-gm-api.kingnet.com/game/enum/my/platform'
           default_option:
-            label: '全部'
-            value: 'allplatid'
-          default_value: 'allplatid'
+            label: 全部
+            value: allplatid
+          default_value: allplatid
           required: false
-        - name: '渠道'
-          label: '渠道'
-          type: 'MultiSelect'
+        - name: 渠道
+          label: 渠道
+          type: MultiSelect
           source:
             type: URL
-            value:
-              - value: 'http://dev-game-gm-api.kingnet.com/game/enum/channel'
+            value: 'http://dev-game-gm-api.kingnet.com/game/enum/channel'
           default_option:
             label: 全部
             value: allchannel
@@ -42,8 +40,7 @@ chart:
           type: MultiSelect
           source:
             type: URL
-            value:
-              - value: 'http://dev-game-gm-api.kingnet.com/game/enum/server?state=4'
+            value: 'http://dev-game-gm-api.kingnet.com/game/enum/server?state=4'
           default_option:
             label: 全部
             value: allsid

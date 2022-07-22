@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
 	"operate-mongodb/common"
 )
@@ -13,6 +14,7 @@ func MongoInsert() {
 	//使用collection.InsertMany()方法插入多条文档记录
 	collect1 := make([]interface{}, len(common.CONFIG.Chart), len(common.CONFIG.Chart))
 	for i := range common.CONFIG.Chart {
+		common.CONFIG.Chart[i].Id = primitive.NewObjectID().Hex()
 		collect1[i] = common.CONFIG.Chart[i]
 	}
 	_, err := collection1.InsertMany(context.TODO(), collect1)
@@ -23,6 +25,7 @@ func MongoInsert() {
 	collection2 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[1])
 	collect2 := make([]interface{}, len(common.CONFIG.DashBoard), len(common.CONFIG.DashBoard))
 	for i := range common.CONFIG.DashBoard {
+		common.CONFIG.DashBoard[i].Id = primitive.NewObjectID().Hex()
 		collect2[i] = common.CONFIG.DashBoard[i]
 	}
 	_, err = collection2.InsertMany(context.TODO(), collect2)
@@ -33,6 +36,7 @@ func MongoInsert() {
 	collection3 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[2])
 	collect3 := make([]interface{}, len(common.CONFIG.DataBase), len(common.CONFIG.DataBase))
 	for i := range common.CONFIG.DataBase {
+		common.CONFIG.DataBase[i].Id = "62cff27c6d81ae2bb7b864b4"
 		collect3[i] = common.CONFIG.DataBase[i]
 	}
 	_, err = collection3.InsertMany(context.TODO(), collect3)
@@ -43,6 +47,7 @@ func MongoInsert() {
 	collection4 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[3])
 	collect4 := make([]interface{}, len(common.CONFIG.DataSet), len(common.CONFIG.DataSet))
 	for i := range common.CONFIG.DataSet {
+		common.CONFIG.DataSet[i].Id = primitive.NewObjectID().Hex()
 		collect4[i] = common.CONFIG.DataSet[i]
 	}
 	_, err = collection4.InsertMany(context.TODO(), collect4)
@@ -53,6 +58,7 @@ func MongoInsert() {
 	collection5 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[4])
 	collect5 := make([]interface{}, len(common.CONFIG.Transtable), len(common.CONFIG.Transtable))
 	for i := range common.CONFIG.Transtable {
+		common.CONFIG.Transtable[i].Id = primitive.NewObjectID().Hex()
 		collect5[i] = common.CONFIG.Transtable[i]
 	}
 	_, err = collection5.InsertMany(context.TODO(), collect5)

@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/gin-gonic/gin"
+	_ "github.com/gin-gonic/gin"
 	"log"
 	"operate-mongodb/common"
 	"operate-mongodb/initialize"
-	"operate-mongodb/service"
 )
 
 func init() {
@@ -16,11 +17,13 @@ func init() {
 
 func main() {
 	defer close()
-	service.MongoInsert()
+	router := gin.Default()
+	router.Run()
 }
 
 func close() {
-	// 断开连接
+	//断开连接
+	//
 	err := common.Client.Disconnect(context.TODO())
 	if err != nil {
 		log.Fatal(err)
