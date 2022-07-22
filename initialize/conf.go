@@ -22,10 +22,10 @@ func InitConf() {
 	v.WatchConfig()
 	//配置文件发生变更之后会调用的回调函数
 	v.OnConfigChange(func(e fsnotify.Event) {
-		fmt.Println("conf file changed:", e.Name)
 		if err = v.Unmarshal(&common.CONFIG); err != nil {
 			fmt.Println(err)
 		}
+		fmt.Println("conf file changed:", e.Name)
 	})
 	if err = v.Unmarshal(&common.CONFIG); err != nil {
 		fmt.Println(err)

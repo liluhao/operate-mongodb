@@ -1,27 +1,21 @@
 package model
 
 type Chart struct {
-	Id        string `mapstructure:"" bson:"_id,omitempty"`
+	Id        string `mapstructure:"_id" bson:"_id,omitempty"`
 	Name      string `mapstructure:"name" bson:"name,omitempty"`
 	Type      string `mapstructure:"type" bson:"type,omitempty"`
 	Tags      string `mapstructure:"tags" bson:"tags,omitempty"`
 	DatasetId string `mapstructure:"dataset_id" bson:"dataset_id,omitempty"`
 	Inputs    []struct {
-		Behavior string `mapstructure:"behavior" bson:"behavior,omitempty"`
-		Name     string `mapstructure:"name" bson:"name,omitempty"`
-		Label    string `mapstructure:"label" bson:"label,omitempty"`
-		Type     string `mapstructure:"type" bson:"type,omitempty"`
-		Source   struct {
-			Type  string `mapstructure:"type" bson:"type,omitempty"`
-			Value any    `mapstructure:"value" bson:"value,omitempty"`
-		} `mapstructure:"source" bson:"source,omitempty" `
-		DefaultOption struct {
-			Label string `mapstructure:"label" bson:"label,omitempty"`
-			Value string `mapstructure:"value" bson:"value,omitempty"`
-		} `mapstructure:"default_option" bson:"default_option,omitempty"`
-		DefaultValue string `mapstructure:"default_value" bson:"default_value,omitempty"`
-		Required     bool   `mapstructure:"required" bson:"required"`
-		Params       []struct {
+		Behavior      string      `mapstructure:"behavior" bson:"behavior,omitempty"`
+		Name          string      `mapstructure:"name" bson:"name,omitempty"`
+		Label         string      `mapstructure:"label" bson:"label,omitempty"`
+		Type          string      `mapstructure:"type" bson:"type,omitempty"`
+		Source        interface{} `mapstructure:"source" bson:"source,omitempty" `
+		DefaultOption interface{} `mapstructure:"default_option" bson:"default_option,omitempty"`
+		DefaultValue  string      `mapstructure:"default_value" bson:"default_value,omitempty"`
+		Required      bool        `mapstructure:"required" bson:"required"`
+		Params        []struct {
 			Name  string `mapstructure:"name" bson:"name,omitempty"`
 			Value string `mapstructure:"value" bson:"value,omitempty"`
 		} `mapstructure:"params" bson:"params,omitempty"`
@@ -35,7 +29,7 @@ type Chart struct {
 }
 
 type DashBoard struct {
-	Id        string   `mapstructure:"" bson:"_id,omitempty,omitempty"`
+	Id        string   `mapstructure:"_id" bson:"_id,omitempty,omitempty"`
 	AppId     int32    `mapstructure:"app_id" bson:"app_id,omitempty"`
 	Name      string   `mapstructure:"name" bson:"name,omitempty"`
 	ChartsIds []string `mapstructure:"charts_ids" bson:"charts_ids,omitempty"`
@@ -43,7 +37,7 @@ type DashBoard struct {
 }
 
 type DataBase struct {
-	Id       string `mapstructure:"" bson:"_id,omitempty"`
+	Id       string `mapstructure:"_id" bson:"_id,omitempty"`
 	DbName   string `mapstructure:"db_name" bson:"db_name,omitempty"`
 	Username string `mapstructure:"username" bson:"username"`
 	Password string `mapstructure:"password" bson:"password"`
@@ -54,7 +48,7 @@ type DataBase struct {
 }
 
 type DataSet struct {
-	Id      string `mapstructure:"" bson:"_id,omitempty"`
+	Id      string `mapstructure:"_id" bson:"_id,omitempty"`
 	Query   string `mapstructure:"query" bson:"query,omitempty"`
 	Columns []struct {
 		Name       string      `mapstructure:"name" bson:"name,omitempty"`

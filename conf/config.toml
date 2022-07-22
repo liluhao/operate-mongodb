@@ -1,3 +1,6 @@
+[system]
+port = "80"
+
 [mongodb]
 path = "localhost:27017"
 dbname = "research"
@@ -18,8 +21,6 @@ required = false
 
 [chart.inputs.source]
 type = "URL"
-
-[[chart.inputs.source.value]]
 value = "http://dev-game-gm-api.kingnet.com/game/enum/my/platform"
 
 [chart.inputs.default_option]
@@ -35,8 +36,6 @@ required = false
 
 [chart.inputs.source]
 type = "URL"
-
-[[chart.inputs.source.value]]
 value = "http://dev-game-gm-api.kingnet.com/game/enum/channel"
 
 [chart.inputs.default_option]
@@ -52,8 +51,6 @@ required = false
 
 [chart.inputs.source]
 type = "URL"
-
-[[chart.inputs.source.value]]
 value = "http://dev-game-gm-api.kingnet.com/game/enum/server?state=4"
 
 [chart.inputs.default_option]

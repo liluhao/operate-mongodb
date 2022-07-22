@@ -2,12 +2,15 @@ package service
 
 import (
 	"context"
+	"fmt"
+	"github.com/gin-gonic/gin"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"log"
+	"net/http"
 	"operate-mongodb/common"
 )
 
-func MongoInsert() {
+func MongoInsert(c *gin.Context) {
 	mongodb := common.CONFIG.MongoDb
 	// 指定获取要操作的数据集
 	collection1 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[0])
@@ -36,7 +39,7 @@ func MongoInsert() {
 	collection3 := common.Client.Database(mongodb.Dbname).Collection(mongodb.Collections[2])
 	collect3 := make([]interface{}, len(common.CONFIG.DataBase), len(common.CONFIG.DataBase))
 	for i := range common.CONFIG.DataBase {
-		common.CONFIG.DataBase[i].Id = "62cff27c6d81ae2bb7b864b4"
+		common.CONFIG.DataBase[i].Id = primitive.NewObjectID().Hex()
 		collect3[i] = common.CONFIG.DataBase[i]
 	}
 	_, err = collection3.InsertMany(context.TODO(), collect3)
@@ -65,20 +68,8 @@ func MongoInsert() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	fmt.Println("插入成功")
+	c.JSON(http.StatusOK, gin.H{
+		"message": "insert success！",
+	})
 }
-
-/*
-//创建一些ClothTemplate类型的值，准备插入到数据库中
-	s1 := model.ClothTemplate{
-		Class:    "com.sweetpotato.model.template.ClothTemplate",
-		Cid:      "1001",
-		GetType:  1,
-		Name:     "yaya经典款发型",
-		Position: "[-4.504,124.629]",
-		Scale:    "0.5",
-		SuitId:   1,
-		Type:     1,
-		Price:    0,
-	}
-*/
