@@ -3,11 +3,11 @@ package common
 import (
 	"github.com/spf13/viper"
 	"go.mongodb.org/mongo-driver/mongo"
-	"operate-mongodb/conf"
+	"operate-mongodb/model"
 )
 
 var (
-	CONFIG conf.Config
+	CONFIG model.Config
 	VP     *viper.Viper
 	Client *mongo.Client
 )

@@ -1,0 +1,13 @@
+[[transtable]]
+_id = "62da5820fb3986249f6c4e93"
+app_id = 2
+key = "allplatid"
+type = "platform"
+value = "全部"
+
+[[transtable]]
+_id = "62da5820fb3986249f6c4e94"
+app_id = 2
+key = "1"
+type = "platform"
+value = "传奇打金(1)"

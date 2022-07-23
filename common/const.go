@@ -2,5 +2,5 @@ package common
 
 const (
 	YamlConfigFile = "conf/config.yaml"
-	TomlConfigFile = "conf/config.toml"
+	TomlConfigFile = "conf/database.toml"
 )

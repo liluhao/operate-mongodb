@@ -1,0 +1,29 @@
+[[database]]
+_id = "62da582ffb3986249f6c55f7"
+db_name = "kingnet_data"
+driver = "mysql"
+host = "172.16.32.243"
+label = "传奇打金"
+password = "fivekingnet"
+port = 3306
+username = "root"
+
+[[database]]
+_id = "62da582ffb3986249f6c55f8"
+db_name = "project_2_appid_399"
+driver = "clickhouse"
+host = "192.168.100.10"
+label = "传奇打金事件日志"
+password = ""
+port = 8123
+username = ""
+
+[[database]]
+_id = "62da582ffb3986249f6c55f9"
+db_name = "project_2_appid_399"
+driver = "clickhouse"
+host = "192.168.100.10"
+label = "传奇打金事件日志"
+password = ""
+port = 8123
+username = ""

@@ -1,0 +1,7 @@
+[system]
+port = "80"
+
+[mongodb]
+path = "localhost:27017"
+dbname = "research"
+collections = [ "chart", "dashboard", "database", "dataset", "transtable" ]

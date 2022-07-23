@@ -19,7 +19,7 @@ func init() {
 func main() {
 	defer close()
 	router := gin.Default()
-	router.GET("/hello", service.MongoInsert)
+	router.GET("/hello", service.MongoInsertOrUpdate)
 	if err := router.Run(":" + common.CONFIG.System.Port); err != nil {
 		fmt.Println("startup service failed, err:%v\n", err)
 	}
